@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Error')}"></head>
+<body>
+  <main class="contenido">
+    <h1>Algo no ha ido bien</h1>
+    <p th:if="${status == 404}">La página que buscas no existe.</p>
+    <p th:if="${status == 403}">No tienes permiso para acceder a esta página.</p>
+    <p th:if="${status != 404 and status != 403}">Ha ocurrido un error inesperado.</p>
+    <p><a th:href="@{/}">Volver al inicio</a></p>
+  </main>
+</body>
+</html>

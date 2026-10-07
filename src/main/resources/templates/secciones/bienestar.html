@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragments/layout :: head('Bienestar')}"></head>
+<body>
+  <header th:replace="~{fragments/layout :: cabecera('bienestar')}"></header>
+
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <span class="etiqueta-color" style="color:var(--bienestar);"><span class="punto" style="background:var(--bienestar);"></span>BIENESTAR</span>
+      <h1>Cuidamos de ti</h1>
+      <p>Salud, bienestar emocional y seguridad en el trabajo.</p>
+    </div>
+
+    <div class="seccion-grid">
+      <div class="columna-enlaces">
+        <h2>Cuidarte</h2>
+        <ul>
+          <li><a href="#cuidarte"><span class="icono-mini" style="background:#DCF5F1; color:var(--bienestar);">💚</span>StemdoCare</a></li>
+        </ul>
+      </div>
+
+      <div class="columna-enlaces">
+        <h2>Seguridad</h2>
+        <ul>
+          <li><a href="#seguridad"><span class="icono-mini" style="background:#DCF5F1; color:var(--bienestar);">🦺</span>Safety (PRL)</a></li>
+        </ul>
+      </div>
+
+      <div class="columna-enlaces"></div>
+
+      <div class="lo-mas-consultado" style="background:var(--bienestar);">
+        <span class="etiqueta">Recursos</span>
+        <h3>StemdoCare: apoyo emocional</h3>
+        <a href="#cuidarte" class="enlace">Saber más →</a>
+      </div>
+    </div>
+
+    <div class="detalle-grid" style="margin-top:36px;">
+
+      <div class="detalle" id="cuidarte">
+        <h3>💚 StemdoCare</h3>
+        <p>Programa de bienestar físico y emocional para todos los Stemdoers: acompañamiento psicológico, recursos de gestión del estrés y hábitos saludables.</p>
+        <p>Recuerda que el seguro médico (Sanitas Inicia o Alan Health, ver Crecer y beneficios) incluye sesiones de psicología sin coste adicional dentro de su cobertura.</p>
+        <p>Pendiente de enlazar el canal de contacto directo de StemdoCare.</p>
+      </div>
+
+      <div class="detalle" id="seguridad">
+        <h3>🦺 Safety (PRL)</h3>
+        <p>Información de Prevención de Riesgos Laborales: normas de seguridad en cada oficina, qué hacer ante una emergencia y a quién contactar.</p>
+        <p>Pendiente de incorporar el protocolo de emergencia específico de cada sede (Huelva, Mérida, Talavera, Córdoba).</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer th:replace="~{fragments/layout :: pie}"></footer>
+  <div th:replace="~{fragments/chat :: chat}"></div>
+</body>
+</html>

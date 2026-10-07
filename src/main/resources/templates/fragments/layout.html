@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:fragment="head(titulo)">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="_csrf" th:content="${_csrf.token}">
+  <meta name="_csrf_header" th:content="${_csrf.headerName}">
+  <title th:text="${titulo} + ' · Intranet STEMDO'">Intranet</title>
+  <link rel="icon" type="image/png" th:href="@{/images/favicon-32x32.png}">
+  <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+
+<body>
+  <!-- activo: 'inicio' | 'sobre' | 'info' | 'crecer' | 'comunidad' | 'bienestar' | '' -->
+  <header th:fragment="cabecera(activo)">
+    <div class="barra-superior">
+      <div class="barra-superior-inner">
+        <a th:href="@{/}" class="marca">
+          <img th:src="@{/images/logo-full-white.png}" alt="STEMDO">
+          <span class="sub">INTRANET</span>
+        </a>
+
+        <form th:action="@{/faqs}" method="get" class="buscador-cabecera">
+          <input type="search" name="q" placeholder="¿Qué necesitas hoy?" autocomplete="off">
+          <button type="submit" aria-label="Buscar">🔍</button>
+        </form>
+
+        <div class="usuario">
+          <span sec:authentication="name">usuario</span>
+          <form th:action="@{/logout}" method="post">
+            <button type="submit" class="boton-enlace">Salir</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <nav class="subnav">
+      <div class="subnav-inner">
+        <a th:href="@{/}" th:classappend="${activo == 'inicio'} ? 'activo'">Inicio</a>
+        <a th:href="@{/sobre-stemdo}" th:classappend="${activo == 'sobre'} ? 'activo'" style="color: var(--sobre);">
+          <span class="punto" style="background: var(--sobre);"></span>Sobre STEMDO
+        </a>
+        <a th:href="@{/info-util}" th:classappend="${activo == 'info'} ? 'activo'" style="color: var(--info);">
+          <span class="punto" style="background: var(--info);"></span>Info útil
+        </a>
+        <a th:href="@{/crecer-beneficios}" th:classappend="${activo == 'crecer'} ? 'activo'" style="color: var(--crecer);">
+          <span class="punto" style="background: var(--crecer);"></span>Crecer y beneficios
+        </a>
+        <a th:href="@{/comunidad}" th:classappend="${activo == 'comunidad'} ? 'activo'" style="color: var(--comunidad);">
+          <span class="punto" style="background: var(--comunidad);"></span>Comunidad
+        </a>
+        <a th:href="@{/bienestar}" th:classappend="${activo == 'bienestar'} ? 'activo'" style="color: var(--bienestar);">
+          <span class="punto" style="background: var(--bienestar);"></span>Bienestar
+        </a>
+        <a th:href="@{/admin/faq}" sec:authorize="hasRole('ADMIN')" style="margin-left:auto; color:var(--texto-muted);">Administrar FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <footer th:fragment="pie" class="pie">
+    <div class="pie-inner">
+      <span>STEMDO Intranet</span>
+      <span>¿Ves algo desactualizado? <a th:href="@{/info-util} + '#contactos'">Avisa al responsable de la página</a></span>
+    </div>
+  </footer>
+</body>
+</html>

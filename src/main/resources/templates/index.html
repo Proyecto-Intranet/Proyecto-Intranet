@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragments/layout :: head('Inicio')}"></head>
+<body>
+  <header th:replace="~{fragments/layout :: cabecera('inicio')}"></header>
+
+  <main class="contenido">
+
+    <!-- Noticia destacada + destacados laterales -->
+    <div class="home-top">
+      <div class="hero-destacada">
+        <div class="barras"><span></span><span></span><span></span><span></span></div>
+        <p class="etiqueta">Noticia destacada</p>
+        <h1>Arranca el proyecto de mejora de la Intranet</h1>
+        <a th:href="@{/comunidad}" class="enlace">Leer más →</a>
+      </div>
+
+      <div class="destacados-lado">
+        <div class="tarjeta-destacada morada">
+          <span class="etiqueta">Último Coffee &amp; Learn</span>
+          <h3>Buenas prácticas de documentación técnica</h3>
+          <a th:href="@{/comunidad}" class="enlace">▶ Ver grabación</a>
+        </div>
+        <div class="tarjeta-destacada blanca">
+          <span class="etiqueta">¿Acabas de llegar?</span>
+          <h3>Conoce a los founders y al equipo</h3>
+          <a th:href="@{/sobre-stemdo}" class="enlace">Ir a Sobre STEMDO →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explora la intranet -->
+    <section class="bloque">
+      <h2>Explora la intranet</h2>
+      <div class="secciones-color">
+
+        <div class="tarjeta-color c-sobre">
+          <div class="cabecera-color">
+            <div class="icono-circulo">🧭</div>
+            <h3>Sobre STEMDO</h3>
+          </div>
+          <ul>
+            <li><a th:href="@{/sobre-stemdo} + '#valores'">Nuestros valores</a></li>
+            <li><a th:href="@{/sobre-stemdo} + '#founders'">Founders y equipos</a></li>
+            <li><a th:href="@{/sobre-stemdo} + '#guidelines'">Stemdoer guidelines</a></li>
+          </ul>
+        </div>
+
+        <div class="tarjeta-color c-info">
+          <div class="cabecera-color">
+            <div class="icono-circulo">ℹ️</div>
+            <h3>Info útil</h3>
+          </div>
+          <ul>
+            <li><a th:href="@{/info-util} + '#gestiones'">Gestiones</a></li>
+            <li><a th:href="@{/info-util} + '#it-seguridad'">IT y seguridad</a></li>
+            <li><a th:href="@{/info-util} + '#documentacion'">Documentación</a></li>
+          </ul>
+        </div>
+
+        <div class="tarjeta-color c-crecer">
+          <div class="cabecera-color">
+            <div class="icono-circulo">📈</div>
+            <h3>Crecer y beneficios</h3>
+          </div>
+          <ul>
+            <li><a th:href="@{/crecer-beneficios} + '#carrera'">Tu carrera</a></li>
+            <li><a th:href="@{/crecer-beneficios} + '#beneficios'">Beneficios</a></li>
+            <li><a th:href="@{/crecer-beneficios} + '#ventajas'">Ventajas por sede</a></li>
+          </ul>
+        </div>
+
+        <div class="tarjeta-color c-comunidad">
+          <div class="cabecera-color">
+            <div class="icono-circulo">💬</div>
+            <h3>Comunidad</h3>
+          </div>
+          <ul>
+            <li><a th:href="@{/comunidad} + '#iniciativas'">Iniciativas</a></li>
+            <li><a th:href="@{/comunidad} + '#aprendemos'">Aprendemos juntos</a></li>
+            <li><a th:href="@{/comunidad} + '#voz'">Stemdoer Voice</a></li>
+          </ul>
+        </div>
+
+        <div class="tarjeta-color c-bienestar">
+          <div class="cabecera-color">
+            <div class="icono-circulo">💚</div>
+            <h3>Bienestar</h3>
+          </div>
+          <ul>
+            <li><a th:href="@{/bienestar} + '#cuidarte'">StemdoCare</a></li>
+            <li><a th:href="@{/bienestar} + '#seguridad'">Safety (PRL)</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lo que más se usa -->
+    <section class="bloque">
+      <h2>Lo que más se usa</h2>
+      <div class="accesos-rapidos">
+        <a th:href="@{/info-util} + '#ausencias'"><span class="icono-caja">🗓️</span>Ausencias</a>
+        <a th:href="@{/info-util} + '#nomina'"><span class="icono-caja">💶</span>Tu nómina</a>
+        <a th:href="@{/info-util} + '#it-seguridad'"><span class="icono-caja">🎫</span>Ticketing IT</a>
+        <a th:href="@{/info-util} + '#it-seguridad'"><span class="icono-caja">🔑</span>Passbolt</a>
+        <a th:href="@{/info-util} + '#gestiones'"><span class="icono-caja">👤</span>Personio</a>
+        <a th:href="@{/info-util} + '#documentacion'"><span class="icono-caja">🖥️</span>Templates</a>
+        <a th:href="@{/crecer-beneficios} + '#carrera'"><span class="icono-caja">📊</span>Competency Framework</a>
+        <a th:href="@{/crecer-beneficios} + '#beneficios'"><span class="icono-caja">🎓</span>Udemy Business</a>
+      </div>
+    </section>
+
+    <!-- Aprendemos juntos -->
+    <section class="bloque">
+      <h2>Aprendemos juntos · últimas grabaciones <a th:href="@{/comunidad} + '#aprendemos'" class="ver-todo">Ver todas →</a></h2>
+      <div class="grabaciones">
+        <div class="grabacion">
+          <div class="miniatura"><span class="play">▶</span></div>
+          <div class="info"><span class="etiqueta">Arenas</span><h4>Última Arena: retos del proyecto Intranet</h4></div>
+        </div>
+        <div class="grabacion">
+          <div class="miniatura"><span class="play">▶</span></div>
+          <div class="info"><span class="etiqueta">Coffee &amp; Learn</span><h4>Buenas prácticas de documentación técnica</h4></div>
+        </div>
+        <div class="grabacion">
+          <div class="miniatura"><span class="play">▶</span></div>
+          <div class="info"><span class="etiqueta">Sesiones internas</span><h4>Sesión Tech-DTO: despliegues seguros</h4></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Iniciativas de la comunidad -->
+    <section class="bloque">
+      <h2>Iniciativas de la comunidad</h2>
+      <div class="iniciativas">
+        <a th:href="@{/comunidad} + '#iniciativas'" class="iniciativa">
+          <div class="foto">[Foto actual de DoDiversity]</div>
+          <div class="info">DoDiversity →</div>
+        </a>
+        <a th:href="@{/comunidad} + '#iniciativas'" class="iniciativa">
+          <div class="foto">[Foto actual de Net0Journey]</div>
+          <div class="info">Net0Journey →</div>
+        </a>
+        <a th:href="@{/comunidad} + '#iniciativas'" class="iniciativa">
+          <div class="foto">[Foto actual de Movember]</div>
+          <div class="info">Movember →</div>
+        </a>
+        <a th:href="@{/comunidad} + '#iniciativas'" class="iniciativa">
+          <div class="foto">[Foto actual de StemdoClubs]</div>
+          <div class="info">StemdoClubs →</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer th:replace="~{fragments/layout :: pie}"></footer>
+  <div th:replace="~{fragments/chat :: chat}"></div>
+</body>
+</html>

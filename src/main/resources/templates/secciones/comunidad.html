@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragments/layout :: head('Comunidad')}"></head>
+<body>
+  <header th:replace="~{fragments/layout :: cabecera('comunidad')}"></header>
+
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <span class="etiqueta-color" style="color:var(--comunidad);"><span class="punto" style="background:var(--comunidad);"></span>COMUNIDAD</span>
+      <h1>Lo que construimos juntos</h1>
+      <p>Iniciativas, aprendizaje compartido y tu voz como Stemdoer.</p>
+    </div>
+
+    <div class="seccion-grid">
+      <div class="columna-enlaces">
+        <h2>Iniciativas</h2>
+        <ul>
+          <li><a href="#iniciativas"><span class="icono-mini" style="background:#EFE9FE; color:var(--comunidad);">🌍</span>DoDiversity</a></li>
+          <li><a href="#iniciativas"><span class="icono-mini" style="background:#EFE9FE; color:var(--comunidad);">🌱</span>Net0Journey</a></li>
+          <li><a href="#iniciativas"><span class="icono-mini" style="background:#EFE9FE; color:var(--comunidad);">🎗️</span>Movember</a></li>
+          <li><a href="#iniciativas"><span class="icono-mini" style="background:#EFE9FE; color:var(--comunidad);">🎮</span>StemdoClubs</a></li>
+        </ul>
+      </div>
+
+      <div class="columna-enlaces">
+        <h2>Aprendemos juntos</h2>
+        <ul>
+          <li><a href="#aprendemos"><span class="icono-mini" style="background:#EFE9FE; color:var(--comunidad);">🏟️</span>Arenas</a></li>
+          <li><a href="#aprendemos"><span class="icono-mini" style="background:#EFE9FE; color:var(--comunidad);">☕</span>Coffee &amp; Learn</a></li>
+          <li><a href="#aprendemos"><span class="icono-mini" style="background:#EFE9FE; color:var(--comunidad);">💻</span>Sesiones Tech / Tech-DTO</a></li>
+          <li><a href="#grabaciones"><span class="icono-mini" style="background:#EFE9FE; color:var(--comunidad);">🎬</span>Todas las grabaciones</a></li>
+        </ul>
+      </div>
+
+      <div class="columna-enlaces">
+        <h2>Tu voz</h2>
+        <ul>
+          <li><a href="#voz"><span class="icono-mini" style="background:#EFE9FE; color:var(--comunidad);">🎙️</span>Stemdoer Voice</a></li>
+        </ul>
+      </div>
+
+      <div class="lo-mas-consultado" style="background:var(--comunidad);">
+        <span class="etiqueta">Próxima sesión</span>
+        <h3>Sesión Tech: IA generativa — 14 oct.</h3>
+        <a href="#aprendemos" class="enlace">Ver calendario →</a>
+      </div>
+    </div>
+
+    <div class="detalle-grid" style="margin-top:36px;">
+
+      <div class="detalle" id="iniciativas" style="grid-column: 1 / -1;">
+        <h3>🌍 Iniciativas de la comunidad</h3>
+        <p><strong>DoDiversity:</strong> iniciativa por la diversidad e inclusión en STEMDO. Pendiente de ampliar contenido.</p>
+        <p><strong>Net0Journey:</strong> iniciativa de sostenibilidad y camino hacia las cero emisiones netas. Pendiente de ampliar contenido.</p>
+        <p><strong>Movember:</strong> campaña de concienciación sobre salud masculina cada noviembre. Pendiente de ampliar contenido.</p>
+        <p><strong>StemdoClubs:</strong> grupos de interés creados por los propios Stemdoers (deporte, lectura, videojuegos...). Si quieres proponer uno nuevo, contacta con People Local de tu oficina.</p>
+      </div>
+
+      <div class="detalle" id="aprendemos">
+        <h3>☕ Aprendemos juntos</h3>
+        <p><strong>Arenas:</strong> encuentros abiertos para compartir retos técnicos entre equipos.</p>
+        <p><strong>Coffee &amp; Learn:</strong> sesiones informales de aprendizaje compartido.</p>
+        <p><strong>Sesiones Tech / Tech-DTO:</strong> antes eran dos espacios distintos; se han unificado aquí para evitar la duplicidad detectada en la auditoría de la Fase 1.</p>
+      </div>
+
+      <div class="detalle" id="grabaciones">
+        <h3>🎬 Calendario y grabaciones</h3>
+        <p><strong>14 oct —</strong> Sesión Tech: introducción a IA generativa (16:00, online y todas las oficinas)</p>
+        <p><strong>21 oct —</strong> Onboarding nuevos Graduates (10:00, oficina Talavera)</p>
+        <p><strong>28 oct —</strong> Sesión Tech-DTO: buenas prácticas de despliegue (16:00, online)</p>
+        <p><strong>06 nov —</strong> Evento social de otoño (18:30, oficina Huelva)</p>
+        <p>Las grabaciones de sesiones anteriores están pendientes de enlazar a la plataforma de vídeo interna.</p>
+      </div>
+
+      <div class="detalle" id="voz">
+        <h3>🎙️ Stemdoer Voice</h3>
+        <p>Espacio donde cualquier Stemdoer puede compartir ideas, sugerencias o feedback sobre la vida en la empresa. Pendiente de enlazar el formulario o canal correspondiente.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer th:replace="~{fragments/layout :: pie}"></footer>
+  <div th:replace="~{fragments/chat :: chat}"></div>
+</body>
+</html>
