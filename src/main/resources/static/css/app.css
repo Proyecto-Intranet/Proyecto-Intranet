@@ -270,3 +270,7 @@ a { color: inherit; text-decoration: none; }
 #chat-entrada input:focus { outline: 2px solid var(--azul); outline-offset: -2px; }
 #chat-entrada button { padding: 0 16px; border: 0; background: var(--azul); color: #fff; cursor: pointer; }
 #chat-entrada button:disabled { background: #8a9bb0; cursor: wait; }
+
+/* versión mínima: tarjetas sin lista de enlaces */
+.tarjeta-color { min-height: 110px; }
+.hero-destacada { margin-bottom: 8px; min-height: 0; }

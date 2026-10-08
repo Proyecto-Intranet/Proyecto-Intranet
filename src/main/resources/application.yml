@@ -1,24 +1,16 @@
 spring:
   application:
     name: intranet
-  profiles:
-    default: dev
+  datasource:
+    url: jdbc:h2:mem:intranet   # BD en memoria: se recrea en cada arranque
+    username: sa
+    password:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: validate
-  flyway:
-    enabled: true
+      ddl-auto: create-drop     # Hibernate crea la tabla a partir de la entidad
+  thymeleaf:
+    cache: false
 
 server:
   port: 8080
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health
-  endpoint:
-    health:
-      show-details: never
-    
